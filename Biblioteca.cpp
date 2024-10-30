@@ -106,9 +106,24 @@ int main() {
                     if (busca_alt == lv.codigo_lv) {
                         fseek(arquivos_livro, sizeof(struct livro) * pos, SEEK_SET);
                     
-                        cout << "Digite sua alteracao de titulo: ";
-                        cin.get(lv.titulo_lv, 40);
+                        cout << "Digite a alteraçao dos campos: "<< endl;
                         cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                         cout << "Area do livro: ";
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                        cin.get(lv.area, 40);
+                        cout << "Titulo do livro: ";
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                        cin.get(lv.titulo_lv, 40);
+                        cout << "Autores do livro: ";
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                        cin.get(lv.autores, 40);
+                        cout << "Editora do livro: ";
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                        cin.get(lv.editora, 40);
+                        cout << "Numero de paginas do livro: ";
+                        cin >> lv.numero_p;
+
+
                        
 
                         if (fwrite(&lv, sizeof(struct livro), 1, arquivos_livro) == 1) {
